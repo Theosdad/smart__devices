@@ -6,6 +6,16 @@
 
 .nav__logo {
   align-self: center;
+
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 1;
+  }
 }
 
 .nav__logo-picture {
@@ -38,5 +48,16 @@
 
   @media (max-width: $tablet-width) {
     display: none;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+    color: $deep-sky-blue-accent;
+    border-color: $deep-sky-blue-accent;
+  }
+
+  &:active {
+    opacity: 1;
   }
 }

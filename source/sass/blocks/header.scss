@@ -20,6 +20,16 @@
   padding-left: 350px;
   padding-right: 410px;
 
+  @media (max-width:$desktop-width-only) {
+    padding-left: 350px;
+    padding-right: 410px;
+  }
+
+  @media (max-width:$desktop-width) {
+    padding-left: calc(350px - 25vw);
+    padding-right: calc(410px - 25vw);
+  }
+
   @media (max-width: $tablet-width) {
     padding-left: 50px;
     padding-right: 70px;
