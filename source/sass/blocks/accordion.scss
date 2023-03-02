@@ -128,7 +128,8 @@
     }
 
     &::before {
-      transform: rotate(90deg);
+      transform: rotate(-270deg);
+      transition: all .5s ease-out;
     }
 
     // &--no-js {

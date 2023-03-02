@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 .nav__logo {
   align-self: center;
-
+  margin-right: auto;
 
   &:hover,
   &:focus {
@@ -27,13 +28,17 @@
 
 .nav__list {
   margin: 0;
-  margin-left: auto;
   align-self: center;
+  margin-right: auto;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
 }
 
 .nav__button {
   padding: 11px 16px;
-  margin-left: auto;
+  margin-right: 60px;
   font-family: $roboto-condensed;
   font-style: normal;
   font-weight: 700;

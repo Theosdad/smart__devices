@@ -1,26 +1,14 @@
 .site-list {
   padding: 0;
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-}
+  display: grid;
+  grid-template-columns: 225px 225px;
 
-.site-list__item {
- &:not(:last-child) {
-  padding-right: 120px;
-
-  @media (max-width:$desktop-width-only) {
-    padding-right: 120px;
+  @media (max-width: $tablet-width) {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
-
-  @media (max-width:$desktop-width) {
-    padding-right: calc(120px - 7vw);
-  }
-
-  @media (max-width:$tablet-width) {
-    padding-right: 0;
-  }
- }
 }
 
 .site-list__link {
