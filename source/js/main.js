@@ -2,6 +2,8 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import './modules/accordion';
+import {initAccordions} from './modules/league/init-accordion';
+import {executeAboutButton} from './modules/accorion-about';
 
 // ---------------------------------
 
@@ -22,6 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    initAccordions();
+    executeAboutButton();
   });
 });
 

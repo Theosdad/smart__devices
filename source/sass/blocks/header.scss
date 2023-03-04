@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 110px;
   background: linear-gradient(180deg, $black-pearl 85%, $black-pearl-transparent 100%);
-  z-index: 1;
+  z-index: 10;
   position: fixed;
 
   @media (max-width: $tablet-width) {

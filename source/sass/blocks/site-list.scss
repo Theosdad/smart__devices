@@ -40,12 +40,12 @@
   &:active {
     opacity: 1;
   }
-}
 
-.site-list__link p {
-  margin: 0;
+  p {
+    margin: 0;
 
-  @media (max-width: $tablet-width) {
-    display: none;
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
   }
 }
