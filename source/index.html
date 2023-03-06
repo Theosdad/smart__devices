@@ -51,9 +51,9 @@
   </header>
   <main>
     <div class="main__container">
-      <h1> Smart device. Умные технологии. Ваш надежный помощник в сфере схемотехники</h1>
       <section class="hero">
-        <div class="hero__wrapper">
+        <h1 class="visually-hidden"> Smart device. Умные технологии. Ваш надежный помощник в сфере схемотехники</h1>
+        <div class="hero__container">
           <div class="hero__image-wrapper">
             <picture>
               <source type="image/webp" media="(max-width: 767px)"
@@ -221,6 +221,48 @@
               </a>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="form" id="form-section">
+        <div class="form__container">
+          <div class="form__image">
+            <picture>
+              <source type="image/webp" srcset="img/airplane.webp 1x, img/airplane@2x.webp 2x">
+              <img src="img/airplane.png" srcset="img/airplane@2x.png 2x" width="510" height="285"
+                alt="Самолётик из бумаги">
+            </picture>
+          </div>
+          <form action="https://echo.htmlacademy.ru/" method="get">
+            <div class="form__heading-wrapper">
+              <h2>Остались вопросы? Задайте их нам!</h2>
+              <p>Мы проконсультируем Вас бесплатно</p>
+            </div>
+            <div class="form__input-wrapper">
+              <div class="form__input form__input--username">
+                <label for="username">
+                  <input type="text" name="username" id="username" placeholder="Имя" required>
+                </label>
+              </div>
+              <div class="form__input form__image--userphone">
+                <label for="userphone">
+                  <input type="tel" name="userphone" id="userphone" placeholder="Телефон" required>
+                </label>
+              </div>
+              <div class="form__input form__input--question">
+              <label for="question">
+                <textarea name="question" id="question" placeholder="Ваш вопрос" required rows="6"></textarea>
+              </label>
+              </div>
+              <div class="form__input form__input--agreement">
+                <label for="agreement">
+                  <input type="checkbox" name="agreement" required checked>
+                  <span class="form__agreement-mark"></span>
+                  <span>Я согласен нa обработку персональных данных</span>
+                </label>
+              </div>
+              <button class="form__input form__input--button" type="submit">Задать вопрос</button>
+            </div>
+          </form>
         </div>
       </section>
     </div>

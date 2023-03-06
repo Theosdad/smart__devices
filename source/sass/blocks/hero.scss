@@ -1,11 +1,12 @@
 .hero {
   width: 100%;
   height: auto;
-  max-width: $desktop-width-only;
-  margin: 0 auto;
+  background-color: $black-pearl;
 }
 
-.hero__wrapper {
+.hero__container {
+  max-width: $desktop-width-only;
+  margin: 0 auto;
   position: relative;
 }
 
