@@ -15,6 +15,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
   <link rel="manifest" href="./img/favicon/site.webmanifest">
+  <link rel="preload" href="fonts/roboto-condensed-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/roboto-condensed-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/pt-mono-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
 </head>
 
 <body>
@@ -45,7 +48,7 @@
             </a>
           </li>
         </ul>
-        <a href="#" class="button nav__button nav__button-callback">Заказать звонок</a>
+        <a href="#" class="button nav__button nav__button-callback" data-open-modal="modal">Заказать звонок</a>
       </nav>
     </div>
   </header>
@@ -72,7 +75,7 @@
           <div class="hero__description-wrapper">
             <h2>Печатные платы</h2>
             <h3>производство и монтаж, поставка комплектующих,<br> блоков и модулей</h3>
-            <a class="button hero__button" href="#">
+            <a class="button hero__button" href="#form">
               <p>Получить бесплатную консультацию</p>
               <p>Бесплатная консультация</p>
             </a>
@@ -223,13 +226,13 @@
           </ul>
         </div>
       </section>
-      <section class="form" id="form-section">
-        <div class="form__container">
+      <section class="form" id="form">
+        <div class="form__container" data-form-validate>
           <div class="form__image">
             <picture>
               <source type="image/webp" srcset="img/airplane.webp 1x, img/airplane@2x.webp 2x">
               <img src="img/airplane.png" srcset="img/airplane@2x.png 2x" width="510" height="285"
-                alt="Самолётик из бумаги">
+                alt="Самолётик из бумаги.">
             </picture>
           </div>
           <form action="https://echo.htmlacademy.ru/" method="get">
@@ -239,28 +242,30 @@
             </div>
             <div class="form__input-wrapper">
               <div class="form__input form__input--username">
-                <label for="username">
+                <label for="username" data-validate-type="text" data-required
+                  data-message-base="Поле обязательно к заполнению">
                   <input type="text" name="username" id="username" placeholder="Имя" required>
                 </label>
               </div>
-              <div class="form__input form__image--userphone">
-                <label for="userphone">
+              <div class="form__input form__input--userphone">
+                <label for="userphone" data-validate-type="phone" data-required
+                  data-message-base="Поле обязательно к заполнению">
                   <input type="tel" name="userphone" id="userphone" placeholder="Телефон" required>
                 </label>
               </div>
               <div class="form__input form__input--question">
-              <label for="question">
-                <textarea name="question" id="question" placeholder="Ваш вопрос" required rows="6"></textarea>
-              </label>
+                <label for="question">
+                  <textarea name="question" id="question" placeholder="Ваш вопрос" rows="6"></textarea>
+                </label>
               </div>
+              <button class="form__input form__input--button" type="submit">Задать вопрос</button>
               <div class="form__input form__input--agreement">
-                <label for="agreement">
-                  <input type="checkbox" name="agreement" required checked>
+                <label for="agreement" data-validate-type="checkbox" data-required>
+                  <input class="visually-hidden" type="checkbox" name="agreement" id="agreement" required checked>
                   <span class="form__agreement-mark"></span>
                   <span>Я согласен нa обработку персональных данных</span>
                 </label>
               </div>
-              <button class="form__input form__input--button" type="submit">Задать вопрос</button>
             </div>
           </form>
         </div>
@@ -279,7 +284,7 @@
               <svg aria-hidden="true" focusable="false" width="30" height="30">
                 <use href="./img/sprite.svg#icon-social-ok" />
               </svg>
-              <p>Мы в Одноклассниках.</p>
+              <p class="visually-hidden">Мы в Одноклассниках.</p>
             </a>
           </li>
           <li class="social__item">
@@ -287,7 +292,7 @@
               <svg aria-hidden="true" focusable="false" width="30" height="30">
                 <use href="./img/sprite.svg#icon-social-vk" />
               </svg>
-              <p>Мы ВКонтакте.</p>
+              <p class="visually-hidden">Мы ВКонтакте.</p>
             </a>
           </li>
           <li class="social__item">
@@ -295,7 +300,7 @@
               <svg aria-hidden="true" focusable="false" width="30" height="30">
                 <use href="./img/sprite.svg#icon-social-pinterest" />
               </svg>
-              <p>Мы в Pinterest.</p>
+              <p class="visually-hidden">Мы в Pinterest.</p>
             </a>
           </li>
         </ul>
@@ -303,11 +308,11 @@
       <div class="footer__wrapper accordion">
         <div class="accordion__wrapper">
           <h3>Разделы сайта</h3>
-          <button class="accordion__button" type="button">
+          <button class="accordion__button accordion__button--no-js" type="button">
             <span>Свернуть / Развернуть</span>
           </button>
         </div>
-        <ul class="accordion__list accordion__list-nav">
+        <ul class="accordion__list accordion__list-nav accordion__list--no-js">
           <li class="accordion__item">
             <a class="accordion__link" href="#">О компании</a>
           </li>
@@ -334,11 +339,11 @@
       <div class="footer__wrapper accordion">
         <div class="accordion__wrapper">
           <h3>Наш офис</h3>
-          <button class="accordion__button" type="button">
+          <button class="accordion__button accordion__button--no-js" type="button">
             <span>Свернуть / Развернуть</span>
           </button>
         </div>
-        <ul class="accordion__list">
+        <ul class="accordion__list accordion__list--no-js">
           <li class="accordion__item">
             <a class="accordion__link" href="#">г. Мытищи, Олимпийский&nbsp;проспект, д.10</a>
           </li>
@@ -354,8 +359,50 @@
         </ul>
       </div>
     </div>
-
   </footer>
+  <div class="modal" data-modal="modal">
+    <div class="modal__container">
+      <div class="modal__overlay">
+        <div class="modal__content" data-form-validate>
+          <div class="modal__close-button" data-close-modal></div>
+          <form action="https://echo.htmlacademy.ru/" method="get">
+            <div class="modal__heading-wrapper">
+              <h2>Закажите звонок</h2>
+              <p>Оставьте контакты, мы проконсультируем<br> вас бесплатно в удобное время</p>
+            </div>
+            <div class="modal__input-wrapper">
+              <div class="modal__input modal__input--username">
+                <label for="username" data-validate-type="text" data-required
+                  data-message-base="Поле обязательно к заполнению">
+                  <input type="text" name="username" id="username" placeholder="Имя" required>
+                </label>
+              </div>
+              <div class="modal__input modal__input--userphone">
+                <label for="userphone" data-validate-type="phone" data-required
+                  data-message-base="Поле обязательно к заполнению">
+                  <input type="tel" name="userphone" id="userphone" placeholder="Телефон" required>
+                </label>
+              </div>
+              <div class="modal__input modal__input--question">
+                <label for="question">
+                  <textarea name="question" id="question" placeholder="Ваш вопрос" rows="6"></textarea>
+                </label>
+              </div>
+              <button class="modal__input modal__input--button" type="submit">отправить</button>
+              <div class="modal__input modal__input--agreement">
+                <label for="modal-agreement" data-validate-type="checkbox" data-required>
+                  <input class="visually-hidden" type="checkbox" name="agreement" id="modal-agreement" required checked>
+                  <span class="modal__agreement-mark"></span>
+                  <span>Я согласен нa обработку персональных данных</span>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>

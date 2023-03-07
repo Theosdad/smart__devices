@@ -33,6 +33,10 @@
   @media (max-width: $mobile-width) {
     display: none;
 
+    &--no-js {
+      display: flex;
+    }
+
     &--shown {
       display: flex;
     }
@@ -129,9 +133,9 @@
       transition: all .5s ease-out;
     }
 
-    // &--no-js {
-    //   display: none;
-    // }
+    &--no-js {
+      display: none;
+    }
 
     &--shown {
       &::before {

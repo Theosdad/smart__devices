@@ -13,7 +13,6 @@
   flex-wrap: wrap;
 
   @media (max-width:$tablet-width) {
-    // max-width: calc($tablet-width - 100px);
     padding: 50px;
   }
 

@@ -5,6 +5,8 @@ const accordionsList = document.querySelectorAll('.accordion__list');
 accordions.forEach(function (accordion) {
   const button = accordion.querySelector('.accordion__button');
   const list = accordion.querySelector('.accordion__list');
+  list.classList.remove('accordion__list--no-js');
+  button.classList.remove('accordion__button--no-js');
 
   button.addEventListener('click', function () {
     if (button.classList.contains('accordion__button--shown')) {

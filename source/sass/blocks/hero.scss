@@ -83,6 +83,20 @@
     padding: 12px 38px;
   }
 
+  &:focus,
+  &:hover {
+    background-color: $alice-blue;
+    opacity: .8;
+
+    p {
+      color: $deep-sky-blue;
+    }
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
   p {
     margin: 0;
     color: $alice-blue;

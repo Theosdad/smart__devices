@@ -13,11 +13,13 @@
   color: $color-default-white;
 
   @media (max-width:$tablet-width) {
-    padding-bottom: 75px;
+    padding-top: 50px;
+    padding-bottom: 125px;
+    background: none;
   }
 
   @media (max-width:$mobile-width) {
-    padding-bottom: 85px;
+    padding-bottom: 90px;
   }
 }
 
@@ -26,14 +28,20 @@
   margin: 0 auto;
   display: flex;
 
+  @media (max-width:$tablet-width) {
+    padding: 0 50px;
+    width: 100%;
+  }
 
-  // @media (max-width:$tablet-width) {
-  //   padding: 0 50px;
-  // }
+  @media (max-width:$mobile-width) {
+    padding: 0 25px;
+  }
 
-  // @media (max-width:$mobile-width) {
-  //   padding: 0 25px;
-  // }
+  form {
+    @media (max-width:$tablet-width) {
+      width: 100%;
+    }
+  }
 }
 
 .form__image {
@@ -51,15 +59,35 @@
     font-weight: 400;
     font-size: 36px;
     line-height: 51px;
-
     margin: 0;
     margin-bottom: 15px;
+
+    @media (max-width:$tablet-width) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width:$mobile-width) {
+      font-size: 30px;
+      line-height: 42px;
+      margin-bottom: 20px;
+    }
   }
 
   p {
     margin: 0;
     margin-bottom: 35px;
     padding-left: 10px;
+
+    @media (max-width:$tablet-width) {
+      margin-bottom: 25px;
+      padding-left: 0;
+    }
+
+    @media (max-width:$mobile-width) {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 40px;
+    }
   }
 }
 
@@ -71,6 +99,20 @@
     "button agreement";
   max-width: 580px;
   column-gap: 30px;
+
+  @media (max-width:$tablet-width) {
+    width: 100%;
+    max-width: calc($tablet-width - 100px);
+  }
+
+  @media (max-width:$mobile-width) {
+    grid-template-areas:
+      "username"
+      "userphone"
+      "question"
+      "button"
+      "agreement";
+  }
 }
 
 .form__input {
@@ -80,6 +122,7 @@
     & input:not([type="checkbox"]),
     & textarea {
       background-color: $black-pearl-faded;
+      line-height: 22px;
       border: none;
       border-radius: 3px;
       color: $alice-blue;
@@ -101,10 +144,6 @@
         background-color: rgba($black-pearl, 0.5);
       }
     }
-
-    & input[type="checkbox"] {
-      display: none;
-    }
   }
 
   & input:not([type="checkbox"]) {
@@ -114,22 +153,52 @@
   & textarea {
     width: 100%;
     padding: 35px 15px 10px 15px;
+
+    @media (max-width:$mobile-width) {
+      padding-top: 25px;
+    }
   }
 
   &--username {
     grid-area: username;
     margin-bottom: 35px;
     width: 275px;
+
+    @media (max-width:$tablet-width) {
+      min-width: 320px;
+      margin-bottom: 25px;
+    }
+
+    @media (max-width:$mobile-width) {
+      width: 100%;
+      min-width: 270px;
+      margin-bottom: 20px;
+    }
   }
 
   &--userphone {
     grid-area: userphone;
     max-width: 275px;
+
+    @media (max-width:$tablet-width) {
+      min-width: 320px;
+    }
+
+    @media (max-width:$mobile-width) {
+      width: 100%;
+      min-width: 270px;
+      max-width: none;
+      margin-bottom: 20px;
+    }
   }
 
   &--question {
     grid-area: question;
     margin-bottom: 35px;
+
+    @media (max-width:$mobile-width) {
+      margin-bottom: 30px;
+    }
   }
 
   &--button {
@@ -146,6 +215,11 @@
     border-radius: 3px;
     padding: 13px;
     margin-right: 10px;
+
+    @media (max-width:$mobile-width) {
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
 
     &:hover,
     &:focus {
@@ -169,10 +243,14 @@
       display: flex;
       align-items: center;
       padding-top: 13px;
+
+      @media (max-width:$mobile-width) {
+        padding: 0;
+      }
     }
   }
 
-  input[type="checkbox"]:checked + .form__agreement-mark {
+  input[type="checkbox"]:checked+.form__agreement-mark {
     &::after {
       content: "";
     }
