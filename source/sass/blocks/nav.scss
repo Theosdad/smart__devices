@@ -7,7 +7,18 @@
 
 .nav__logo {
   align-self: center;
+  padding-top: 5px;
   margin-right: auto;
+  user-select: none;
+
+  @media (max-width:$tablet-width) {
+    margin-right: auto;
+    padding-top: 10px;
+  }
+
+  @media (max-width:$mobile-width) {
+    padding-top: 5px;
+  }
 
   &:hover,
   &:focus {
@@ -50,6 +61,7 @@
   color: $whisper;
   border: 1px solid $whisper;
   border-radius: 3px;
+  user-select: none;
 
   @media (max-width: $tablet-width) {
     display: none;

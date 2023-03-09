@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  min-height: 110px;
+  min-height: 120px;
   background: linear-gradient(180deg, $black-pearl 85%, $black-pearl-transparent 100%);
   z-index: 10;
   position: fixed;
@@ -18,13 +18,15 @@
   margin: 0 auto;
   height: 100%;
   max-width: calc($desktop-width-only - 700px);
-  padding-top: 10px;
+  padding-top: 16px;
 
   @media (max-width: $tablet-width) {
     padding: 0 50px;
+    padding-top: 7px;
   }
 
   @media (max-width: $mobile-width) {
-   padding: 0 26px;
+    padding: 0 26px;
+    padding-right: 16px;
   }
 }

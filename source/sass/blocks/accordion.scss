@@ -19,6 +19,7 @@
   &-nav {
     display: grid;
     grid-template-columns: 220px 220px;
+    column-gap: 7%;
 
     @media (max-width:$mobile-width) {
       display: none;
@@ -32,6 +33,7 @@
 
   @media (max-width: $mobile-width) {
     display: none;
+    transform: translateY(-10px);
 
     &--no-js {
       display: flex;
@@ -44,7 +46,7 @@
 }
 
 .accordion__item {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 
   &:nth-child(-n+4) {
     grid-column: 1 / 2;
@@ -70,6 +72,13 @@
   &:nth-child(n+9) {
     grid-column: auto;
   }
+
+  @media (max-width:$mobile-width) {
+    &:first-child {
+      margin-bottom: 11px;
+    }
+  }
+
 }
 
 .accordion__link {
@@ -81,9 +90,17 @@
   color: $color-default-white;
   opacity: .7;
 
+  &--phone {
+    line-height: 25px;
+  }
+
   @media (max-width:$mobile-width) {
     font-size: 14px;
     line-height: 19px;
+
+    &--phone {
+      line-height: 25px;
+    }
   }
 
   &:hover,
@@ -115,6 +132,7 @@
     height: 25px;
     background-color: $black-pearl;
     border: none;
+    transform: translate(3px, -3px);
     cursor: pointer;
 
     &::after,
@@ -143,18 +161,5 @@
         transition: all .5s ease-out;
       }
     }
-  }
-
-  span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(100%);
   }
 }

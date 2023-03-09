@@ -12,20 +12,26 @@
 
 .hero__description-wrapper {
   position: absolute;
-  top: 34%;
-  left: 25%;
+  top: 34.5%;
+  left: 24.7%;
   font-family: $roboto-condensed;
   font-style: normal;
   text-transform: uppercase;
   color: $alice-blue;
 
   @media (max-width:$tablet-width) {
-    left: 7%;
+    top: 28%;
+    left: 6.5%;
+  }
+
+  @media (max-width:$mobile-width) {
+    top: 26.7%;
+    left: 7.5%;
   }
 
   h2 {
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     font-weight: 700;
     letter-spacing: 0.07em;
 
@@ -35,18 +41,19 @@
     @media (max-width:$tablet-width) {
       font-size: 64px;
       line-height: 75px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
 
     @media (max-width:$mobile-width) {
       font-size: 36px;
       line-height: 42px;
+      margin-bottom: 10px;
     }
   }
 
   h3 {
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 47px;
     font-family: $pt-mono;
     font-weight: 400;
     font-size: 22px;
@@ -54,12 +61,13 @@
     text-transform: lowercase;
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 50px;
+      margin-bottom: 58px;
     }
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: $mobile-width) {
       font-size: 14px;
       line-height: 22px;
+      margin-bottom: 42px;
 
       br {
         display: none;
@@ -73,6 +81,7 @@
   background-color: $deep-sky-blue;
   border-radius: 3px;
   display: inline-block;
+  user-select: none;
 
   @media (max-width:$tablet-width) {
     margin-left: 45px;
