@@ -38,6 +38,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    cursor: pointer;
   }
 
   &__content {
@@ -90,33 +91,31 @@
 }
 
 .modal__input {
-  label {
+  & input:not([type="checkbox"]),
+  & textarea {
+    background-color: $black-pearl-faded;
+    border: none;
+    border-radius: 3px;
+    color: $alice-blue;
+    width: 100%;
 
-    & input:not([type="checkbox"]),
-    & textarea {
-      background-color: $black-pearl-faded;
-      border: none;
-      border-radius: 3px;
-      color: $alice-blue;
-      width: 100%;
+    &::placeholder {
+      color: $color-default-white;
+    }
 
-      &::placeholder {
-        color: $color-default-white;
-      }
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: 2px -2px 5px $black-pearl;
+    }
 
-      &:hover,
-      &:focus {
-        outline: none;
-        box-shadow: 2px -2px 5px $black-pearl;
-      }
-
-      &:active,
-      &:focus-within {
-        outline: none;
-        background-color: rgba($black-pearl, 0.5);
-      }
+    &:active,
+    &:focus-within {
+      outline: none;
+      background-color: rgba($black-pearl, 0.5);
     }
   }
+
 
   & input:not([type="checkbox"]) {
     padding: 15px;
@@ -163,7 +162,7 @@
     &:focus {
       background-color: $color-default-white;
       color: $black-pearl-accent;
-      opacity: .8;
+      opacity: 0.8;
     }
 
     &:active {
@@ -173,47 +172,60 @@
 
   &--agreement {
     grid-area: agreement;
-    color: $color-default-white;
     font-size: 14px;
     line-height: 16px;
     opacity: 0.8;
+    padding-left: 12px;
+    color: $color-default-white;
+
+    input {
+      appearance: none;
+      display: block;
+      position: relative;
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      border: 1px solid $color-default-white;
+      border-radius: 2px;
+
+      &:checked {
+        &::after {
+          content: "";
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: 13%;
+        left: 12%;
+        display: block;
+        width: 7px;
+        height: 5px;
+        border: 1px solid $color-default-white;
+        border-right: none;
+        border-top: none;
+        transform: rotate(-45deg);
+      }
+    }
 
     label {
       display: flex;
       align-items: center;
       padding-top: 13px;
+      user-select: none;
     }
-  }
 
-  input[type="checkbox"]:checked+.modal__agreement-mark {
-    &::after {
-      content: "";
+    &:hover,
+    &:focus {
+      color: rgba($black-pearl, 0.5);
+    }
+
+    &:active {
+      opacity: 1;
     }
   }
 }
 
-.modal__agreement-mark {
-  display: block;
-  position: relative;
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-  border: 1px solid $color-default-white;
-  border-radius: 2px;
-
-  &::after {
-    position: absolute;
-    top: 13%;
-    left: 12%;
-    display: block;
-    width: 7px;
-    height: 5px;
-    border: 1px solid $color-default-white;
-    border-right: none;
-    border-top: none;
-    transform: rotate(-45deg);
-  }
-}
 
 .modal__close-button {
   position: absolute;

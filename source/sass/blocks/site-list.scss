@@ -5,7 +5,7 @@
   grid-template-columns: 225px 225px;
   gap: 6%;
 
-  @media (max-width:$desktop-width-only) {
+  @media (max-width: $desktop-width-only) {
     transform: translateX(-7px);
   }
 
@@ -18,7 +18,7 @@
 }
 
 .site-list__item {
-  @media (max-width:$tablet-width) {
+  @media (max-width: $tablet-width) {
     max-width: 225px;
   }
 }
