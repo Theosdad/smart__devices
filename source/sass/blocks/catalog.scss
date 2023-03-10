@@ -156,20 +156,15 @@
     border-bottom: none;
     border-left: none;
     transform: rotate(45deg);
-    left: 90%;
-    top: 95%;
+    right: 26px;
+    bottom: 26px;
     z-index: 5;
-
-    @media (max-width: $tablet-width) {
-      left: 94.8%;
-      top: 87%;
-    }
 
     @media (max-width: $mobile-width) {
       width: 5px;
       height: 5px;
-      left: 92%;
-      top: 91%;
+      right: 17px;
+      bottom: 17px;
     }
   }
 }

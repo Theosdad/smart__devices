@@ -1676,8 +1676,8 @@ button,
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  left: 90%;
-  top: 95%;
+  right: 26px;
+  bottom: 26px;
   z-index: 5;
 }
 
@@ -2171,11 +2171,6 @@ button,
     margin-left: 45px;
   }
 
-  .catalog__link::before {
-    left: 94.8%;
-    top: 87%;
-  }
-
   .form {
     padding-top: 46px;
     padding-bottom: 125px;
@@ -2610,8 +2605,8 @@ button,
   .catalog__link::before {
     width: 5px;
     height: 5px;
-    left: 92%;
-    top: 91%;
+    right: 17px;
+    bottom: 17px;
   }
 
   .form {
