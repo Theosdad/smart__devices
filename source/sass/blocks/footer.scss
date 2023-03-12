@@ -7,14 +7,13 @@
 .footer__container {
   margin: 0 auto;
   height: 100%;
-  max-width: calc($desktop-width-only - 700px);
-  padding: 51px 0;
+  max-width: calc($desktop-width-only - 600px);
+  padding: 50px;
   display: flex;
-  flex-wrap: wrap;
 
   @media (max-width: $tablet-width) {
-    padding: 50px;
     padding-bottom: 61px;
+    flex-wrap: wrap;
   }
 
   @media (max-width: $mobile-width) {
@@ -26,9 +25,9 @@
 
 .footer__wrapper {
   &:not(:last-child) {
-    margin-right: auto;
+    margin-right: 13%;
 
-    @media (max-width: $mobile-width) {
+    @media (max-width: $tablet-width) {
       margin-right: 0;
     }
   }
@@ -54,7 +53,6 @@
 
   &--nav {
     padding-top: 6px;
-    padding-left: 62px;
 
     @media (max-width: $tablet-width) {
       padding-left: 0;
@@ -67,15 +65,18 @@
   }
 
   &--contacts {
+    max-width: 310px;
     padding-top: 6px;
-    transform: translateX(-38px);
 
     @media (max-width: $tablet-width) {
       transform: translateX(-12px);
+      margin-left: auto;
     }
 
     @media (max-width: $mobile-width) {
       transform: none;
+      margin-left: 0;
+      max-width: none;
     }
   }
 }

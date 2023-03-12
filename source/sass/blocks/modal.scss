@@ -16,7 +16,6 @@
   pointer-events: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-top: 145px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -45,9 +44,13 @@
     position: relative;
     width: 500px;
     padding: 40px;
+    padding-top: 36px;
+    padding-bottom: 15px;
     background-color: $deep-sky-blue-accent;
     border-radius: 3px;
     margin: 0 auto;
+    margin-top: -45px;
+    transform: translateX(-8px);
   }
 
   &.is-active {
@@ -77,6 +80,7 @@
   p {
     margin: 0;
     margin-bottom: 40px;
+    transform: translateY(-10px);
   }
 }
 
@@ -96,6 +100,7 @@
     background-color: $black-pearl-faded;
     border: none;
     border-radius: 3px;
+    font-family: $pt-mono;
     color: $alice-blue;
     width: 100%;
 
@@ -123,24 +128,27 @@
 
   & textarea {
     width: 100%;
-    padding: 25px 15px 10px 15px;
+    padding: 25px 15px 25px 15px;
   }
 
   &--username {
     grid-area: username;
     margin-bottom: 20px;
     width: 100%;
+    transform: translateY(-11px);
   }
 
   &--userphone {
     grid-area: userphone;
     max-width: 100%;
     margin-bottom: 20px;
+    transform: translateY(-9px);
   }
 
   &--question {
     grid-area: question;
     margin-bottom: 25px;
+    transform: translateY(-9px);
   }
 
   &--button {
@@ -156,7 +164,10 @@
     border: none;
     border-radius: 3px;
     padding: 13px;
+    padding-bottom: 11px;
     margin-bottom: 20px;
+    transform: translateY(-17px);
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -172,11 +183,13 @@
 
   &--agreement {
     grid-area: agreement;
+    font-family: $pt-mono;
     font-size: 14px;
     line-height: 16px;
     opacity: 0.8;
-    padding-left: 12px;
+    padding-left: 7px;
     color: $color-default-white;
+    transform: translateY(-30px);
 
     input {
       appearance: none;
@@ -187,6 +200,7 @@
       margin-right: 10px;
       border: 1px solid $color-default-white;
       border-radius: 2px;
+      cursor: pointer;
 
       &:checked {
         &::after {
@@ -213,6 +227,7 @@
       align-items: center;
       padding-top: 13px;
       user-select: none;
+      cursor: pointer;
     }
 
     &:hover,
@@ -231,9 +246,19 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  right: 10%;
-
+  top: 15px;
+  right: 16px;
+  background-color: $deep-sky-blue-accent;
+  border: none;
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    &::after,
+    &::before {
+      background-color: $black-pearl;
+    }
+  }
 
   &::after,
   &::before {

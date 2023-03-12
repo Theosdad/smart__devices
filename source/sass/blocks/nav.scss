@@ -7,7 +7,7 @@
 
 .nav__logo {
   align-self: center;
-  padding-top: 5px;
+  padding-top: 6px;
   margin-right: auto;
   user-select: none;
 
@@ -48,6 +48,7 @@
 }
 
 .nav__button {
+  max-width: 160px;
   padding: 11px 16px;
   margin-right: 60px;
   font-family: $roboto-condensed;

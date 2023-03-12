@@ -4,12 +4,9 @@
 }
 
 .advantages__container {
-  max-width: calc($desktop-width-only - 700px);
+  max-width: calc($desktop-width-only - 600px);
   margin: 0 auto;
-
-  @media (max-width: $tablet-width) {
-    padding: 0 50px;
-  }
+  padding: 0 50px;
 
   @media (max-width: $mobile-width) {
     padding: 0 25px;
@@ -112,6 +109,7 @@
 
   @media (max-width: $mobile-width) {
     min-width: 265px;
+    max-width: none;
     padding: 30px;
     padding-top: 26px;
     padding-bottom: 35px;

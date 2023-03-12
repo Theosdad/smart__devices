@@ -18,8 +18,8 @@
 
   &-nav {
     display: grid;
-    grid-template-columns: 220px 220px;
-    column-gap: 7%;
+    grid-template-columns: 220px max-content;
+    column-gap: 9%;
 
     @media (max-width: $mobile-width) {
       display: none;

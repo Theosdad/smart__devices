@@ -23,12 +23,12 @@
 }
 
 .form__container {
-  max-width: calc($desktop-width-only - 700px);
+  max-width: calc($desktop-width-only - 600px);
   margin: 0 auto;
+  padding: 0 50px;
   display: flex;
 
   @media (max-width: $tablet-width) {
-    padding: 0 50px;
     width: 100%;
   }
 
@@ -98,6 +98,7 @@
     "username userphone"
     "question question"
     "button agreement";
+  grid-template-columns: 1fr 1fr;
   max-width: 580px;
   column-gap: 30px;
 
@@ -113,6 +114,7 @@
       "question"
       "button"
       "agreement";
+    grid-template-columns: 1fr;
   }
 }
 
@@ -145,60 +147,56 @@
 
   & input:not([type="checkbox"]) {
     padding: 15px;
+    width: 100%;
   }
 
   & textarea {
     width: 100%;
-    padding: 23px 15px 0 15px;
+    padding: 23px 15px 20px 15px;
 
     @media (max-width: $tablet-width) {
-      padding: 29px 15px 0 15px;
+      padding: 29px 15px 17px 15px;
     }
 
     @media (max-width: $mobile-width) {
       padding-top: 25px;
-      padding-bottom: 24px;
+      padding-bottom: 46px;
     }
   }
 
   &--username {
     grid-area: username;
     margin-bottom: 19px;
-    width: 275px;
 
     @media (max-width: $tablet-width) {
-      min-width: 320px;
+      width: 100%;
       margin-bottom: 18px;
     }
 
     @media (max-width: $mobile-width) {
       width: 100%;
-      min-width: 270px;
     }
   }
 
   &--userphone {
     grid-area: userphone;
-    max-width: 275px;
 
     @media (max-width: $tablet-width) {
-      min-width: 320px;
+      width: 100%;
     }
 
     @media (max-width: $mobile-width) {
       width: 100%;
-      min-width: 270px;
-      max-width: none;
       margin-bottom: 18px;
     }
   }
 
   &--question {
     grid-area: question;
-    margin-bottom: 34px;
+    margin-bottom: 36px;
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 27px;
+      margin-bottom: 32px;
     }
 
     @media (max-width: $mobile-width) {
@@ -220,6 +218,7 @@
     border-radius: 3px;
     padding: 13px;
     margin-right: 10px;
+    cursor: pointer;
 
     @media (max-width: $tablet-width) {
       margin-right: 55px;
@@ -251,6 +250,11 @@
     opacity: 0.8;
     padding-left: 12px;
 
+    @media (max-width: $tablet-width) {
+      padding-left: 0;
+    }
+
+
     input {
       appearance: none;
       display: block;
@@ -260,6 +264,7 @@
       margin-right: 10px;
       border: 1px solid $color-default-white;
       border-radius: 2px;
+      cursor: pointer;
 
       @media (max-width: $tablet-width) {
         width: 18px;
@@ -294,6 +299,7 @@
       align-items: center;
       padding-top: 13px;
       user-select: none;
+      cursor: pointer;
 
       @media (max-width: $tablet-width) {
         padding-top: 8px;

@@ -16,12 +16,9 @@
 }
 
 .catalog__container {
-  max-width: calc($desktop-width-only - 700px);
+  max-width: calc($desktop-width-only - 600px);
   margin: 0 auto;
-
-  @media (max-width: $tablet-width) {
-    padding: 0 50px;
-  }
+  padding: 0 50px;
 
   @media (max-width: $mobile-width) {
     padding: 0 25px;
@@ -174,5 +171,10 @@
 
   img {
     width: 100%;
+
+    @media (max-width: $mobile-width) {
+      height: 250px;
+      object-fit: cover;
+    }
   }
 }

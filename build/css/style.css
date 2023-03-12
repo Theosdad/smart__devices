@@ -428,6 +428,7 @@ html {
   font-size: 16px;
   line-height: 24px;
   color: #000000;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -652,7 +653,6 @@ button,
   pointer-events: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-top: 145px;
 }
 
 .modal::-webkit-scrollbar {
@@ -689,9 +689,15 @@ button,
   position: relative;
   width: 500px;
   padding: 40px;
+  padding-top: 36px;
+  padding-bottom: 15px;
   background-color: #00b3ff;
   border-radius: 3px;
   margin: 0 auto;
+  margin-top: -45px;
+  -webkit-transform: translateX(-8px);
+  -ms-transform: translateX(-8px);
+  transform: translateX(-8px);
 }
 
 .modal.is-active {
@@ -722,6 +728,9 @@ button,
 .modal__heading-wrapper p {
   margin: 0;
   margin-bottom: 40px;
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .modal__input-wrapper {
@@ -735,6 +744,7 @@ button,
   background-color: rgba(4, 20, 39, 0.15);
   border: none;
   border-radius: 3px;
+  font-family: "PT Mono", "Courier New", monospace;
   color: #f2f5f6;
   width: 100%;
 }
@@ -787,7 +797,7 @@ button,
 
 .modal__input textarea {
   width: 100%;
-  padding: 25px 15px 10px 15px;
+  padding: 25px 15px 25px 15px;
 }
 
 .modal__input--username {
@@ -796,6 +806,9 @@ button,
   grid-area: username;
   margin-bottom: 20px;
   width: 100%;
+  -webkit-transform: translateY(-11px);
+  -ms-transform: translateY(-11px);
+  transform: translateY(-11px);
 }
 
 .form__input-wrapper > .modal__input--username {
@@ -809,6 +822,9 @@ button,
   grid-area: userphone;
   max-width: 100%;
   margin-bottom: 20px;
+  -webkit-transform: translateY(-9px);
+  -ms-transform: translateY(-9px);
+  transform: translateY(-9px);
 }
 
 .form__input-wrapper > .modal__input--userphone {
@@ -821,6 +837,9 @@ button,
   -ms-grid-column: 1;
   grid-area: question;
   margin-bottom: 25px;
+  -webkit-transform: translateY(-9px);
+  -ms-transform: translateY(-9px);
+  transform: translateY(-9px);
 }
 
 .form__input-wrapper > .modal__input--question {
@@ -844,7 +863,12 @@ button,
   border: none;
   border-radius: 3px;
   padding: 13px;
+  padding-bottom: 11px;
   margin-bottom: 20px;
+  -webkit-transform: translateY(-17px);
+  -ms-transform: translateY(-17px);
+  transform: translateY(-17px);
+  cursor: pointer;
 }
 
 .form__input-wrapper > .modal__input--button {
@@ -867,11 +891,15 @@ button,
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: agreement;
+  font-family: "PT Mono", "Courier New", monospace;
   font-size: 14px;
   line-height: 16px;
   opacity: 0.8;
-  padding-left: 12px;
+  padding-left: 7px;
   color: #ffffff;
+  -webkit-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  transform: translateY(-30px);
 }
 
 .form__input-wrapper > .modal__input--agreement {
@@ -890,6 +918,7 @@ button,
   margin-right: 10px;
   border: 1px solid #ffffff;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .modal__input--agreement input:checked::after {
@@ -923,6 +952,7 @@ button,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .modal__input--agreement:hover,
@@ -938,8 +968,18 @@ button,
   position: absolute;
   width: 40px;
   height: 40px;
-  right: 10%;
+  top: 15px;
+  right: 16px;
+  background-color: #00b3ff;
+  border: none;
   cursor: pointer;
+}
+
+.modal__close-button:focus::after,
+.modal__close-button:focus::before,
+.modal__close-button:hover::after,
+.modal__close-button:hover::before {
+  background-color: #041827;
 }
 
 .modal__close-button::after,
@@ -970,13 +1010,15 @@ button,
   background: -o-linear-gradient(top, #041827 85%, rgba(4, 24, 39, 0) 100%);
   background: linear-gradient(180deg, #041827 85%, rgba(4, 24, 39, 0) 100%);
   z-index: 10;
-  position: fixed;
+  position: sticky;
+  top: 0;
 }
 
 .header__container {
   margin: 0 auto;
   height: 100%;
-  max-width: 1220px;
+  max-width: 1320px;
+  padding: 0 50px;
   padding-top: 16px;
 }
 
@@ -995,7 +1037,7 @@ button,
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
-  padding-top: 5px;
+  padding-top: 6px;
   margin-right: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1021,6 +1063,7 @@ button,
 }
 
 .nav__button {
+  max-width: 160px;
   padding: 11px 16px;
   margin-right: 60px;
   font-family: "Roboto Condensed", "Verdana", sans-serif;
@@ -1062,7 +1105,10 @@ button,
 }
 
 .site-list__link {
-  padding: 28px 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1101,17 +1147,15 @@ button,
 .footer__container {
   margin: 0 auto;
   height: 100%;
-  max-width: 1220px;
-  padding: 51px 0;
+  max-width: 1320px;
+  padding: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .footer__wrapper:not(:last-child) {
-  margin-right: auto;
+  margin-right: 13%;
 }
 
 .footer__wrapper h3 {
@@ -1133,14 +1177,11 @@ button,
 
 .footer__wrapper--nav {
   padding-top: 6px;
-  padding-left: 62px;
 }
 
 .footer__wrapper--contacts {
+  max-width: 310px;
   padding-top: 6px;
-  -webkit-transform: translateX(-38px);
-  -ms-transform: translateX(-38px);
-  transform: translateX(-38px);
 }
 
 .social {
@@ -1174,20 +1215,17 @@ button,
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-item-align: self-start;
-  -ms-grid-row-align: self-start;
-  align-self: self-start;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (30px)[3];
+  grid-template-columns: repeat(3, 30px);
   padding-left: 15px;
   gap: 25px;
+  row-gap: 10px;
 }
 
 .social__link {
-  padding: 16px 0;
+  padding-top: 16px;
   color: #f8fdff;
 }
 
@@ -1222,11 +1260,13 @@ button,
 .accordion__list-nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 220px 220px;
-  grid-template-columns: 220px 220px;
-  -webkit-column-gap: 7%;
-  -moz-column-gap: 7%;
-  column-gap: 7%;
+  -ms-grid-columns: 220px -webkit-max-content;
+  -ms-grid-columns: 220px max-content;
+  grid-template-columns: 220px -webkit-max-content;
+  grid-template-columns: 220px max-content;
+  -webkit-column-gap: 9%;
+  -moz-column-gap: 9%;
+  column-gap: 9%;
 }
 
 .accordion__item {
@@ -1307,22 +1347,46 @@ button,
   width: 100%;
   height: auto;
   background-color: #041827;
+  margin-top: -120px;
 }
 
 .hero__container {
-  max-width: 1920px;
+  max-width: 100%;
   margin: 0 auto;
-  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
+}
+
+.hero__image-wrapper {
+  grid-column: 1/-1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.hero__image-wrapper img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 100%;
+  object-position: 50% 100%;
+  width: 100%;
+  height: 880px;
 }
 
 .hero__description-wrapper {
-  position: absolute;
-  top: 34.5%;
-  left: 24.7%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
   font-family: "Roboto Condensed", "Verdana", sans-serif;
   font-style: normal;
   text-transform: uppercase;
   color: #f2f5f6;
+  padding: 304px 50px 10px 24.75%;
 }
 
 .hero__description-wrapper h2 {
@@ -1389,8 +1453,9 @@ button,
 }
 
 .advantages__container {
-  max-width: 1220px;
+  max-width: 1320px;
   margin: 0 auto;
+  padding: 0 50px;
 }
 
 .advantages__list {
@@ -1476,7 +1541,8 @@ button,
 }
 
 .about__container {
-  max-width: 1220px;
+  max-width: 1320px;
+  padding: 0 50px;
   margin: 0 auto;
 }
 
@@ -1534,6 +1600,7 @@ button,
   border: 1px solid #00b2ff;
   border-radius: 3px;
   padding: 13.5px 50px;
+  cursor: pointer;
 }
 
 .about__button:hover,
@@ -1572,8 +1639,9 @@ button,
 }
 
 .catalog__container {
-  max-width: 1220px;
+  max-width: 1320px;
   margin: 0 auto;
+  padding: 0 50px;
 }
 
 .catalog__container h2 {
@@ -1704,8 +1772,9 @@ button,
 }
 
 .form__container {
-  max-width: 1220px;
+  max-width: 1320px;
   margin: 0 auto;
+  padding: 0 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1741,6 +1810,8 @@ button,
   display: -ms-grid;
   display: grid;
   grid-template-areas: "username userphone" "question question" "button agreement";
+  -ms-grid-columns: 1fr 30px 1fr;
+  grid-template-columns: 1fr 1fr;
   max-width: 580px;
   -webkit-column-gap: 30px;
   -moz-column-gap: 30px;
@@ -1801,11 +1872,12 @@ button,
 
 .form__input input:not([type=checkbox]) {
   padding: 15px;
+  width: 100%;
 }
 
 .form__input textarea {
   width: 100%;
-  padding: 23px 15px 0 15px;
+  padding: 23px 15px 20px 15px;
 }
 
 .form__input--username {
@@ -1813,7 +1885,6 @@ button,
   -ms-grid-column: 1;
   grid-area: username;
   margin-bottom: 19px;
-  width: 275px;
 }
 
 .form__input-wrapper > .form__input--username {
@@ -1825,7 +1896,6 @@ button,
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: userphone;
-  max-width: 275px;
 }
 
 .form__input-wrapper > .form__input--userphone {
@@ -1837,7 +1907,7 @@ button,
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: question;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
 }
 
 .form__input-wrapper > .form__input--question {
@@ -1862,6 +1932,7 @@ button,
   border-radius: 3px;
   padding: 13px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .form__input-wrapper > .form__input--button {
@@ -1906,6 +1977,7 @@ button,
   margin-right: 10px;
   border: 1px solid #ffffff;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .form__input--agreement input:checked::after {
@@ -1939,6 +2011,7 @@ button,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .form__input--agreement:hover,
@@ -1961,16 +2034,17 @@ button,
     -webkit-transform: translateX(-7px);
     -ms-transform: translateX(-7px);
     transform: translateX(-7px);
+    padding: 23px;
   }
 }
 
 @media (max-width: 1023px) {
   .header {
     min-height: 100px;
+    position: relative;
   }
 
   .header__container {
-    padding: 0 50px;
     padding-top: 7px;
   }
 
@@ -1997,6 +2071,7 @@ button,
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 0;
+    padding: 0;
   }
 
   .site-list__item {
@@ -2012,8 +2087,13 @@ button,
   }
 
   .footer__container {
-    padding: 50px;
     padding-bottom: 61px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .footer__wrapper:not(:last-child) {
+    margin-right: 0;
   }
 
   .footer__wrapper--nav {
@@ -2025,6 +2105,7 @@ button,
     -webkit-transform: translateX(-12px);
     -ms-transform: translateX(-12px);
     transform: translateX(-12px);
+    margin-left: auto;
   }
 
   .social {
@@ -2045,6 +2126,14 @@ button,
   }
 
   .social__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-item-align: self-start;
+    -ms-grid-row-align: self-start;
+    align-self: self-start;
     padding-top: 10px;
   }
 
@@ -2058,9 +2147,17 @@ button,
     flex-direction: column;
   }
 
+  .hero {
+    margin-top: -100px;
+  }
+
+  .hero__image-wrapper img {
+    height: 640px;
+  }
+
   .hero__description-wrapper {
-    top: 28%;
-    left: 6.5%;
+    padding-top: 179px;
+    padding-left: 50px;
   }
 
   .hero__description-wrapper h2 {
@@ -2075,10 +2172,6 @@ button,
 
   .hero__button {
     margin-left: 45px;
-  }
-
-  .advantages__container {
-    padding: 0 50px;
   }
 
   .advantages__list {
@@ -2120,10 +2213,6 @@ button,
     padding-bottom: 74px;
   }
 
-  .about__container {
-    padding: 0 50px;
-  }
-
   .about__wrapper {
     gap: 25px;
   }
@@ -2151,10 +2240,6 @@ button,
     padding-bottom: 75px;
   }
 
-  .catalog__container {
-    padding: 0 50px;
-  }
-
   .catalog__container h2 {
     margin-bottom: 38px;
   }
@@ -2178,7 +2263,6 @@ button,
   }
 
   .form__container {
-    padding: 0 50px;
     width: 100%;
   }
 
@@ -2208,26 +2292,30 @@ button,
   }
 
   .form__input textarea {
-    padding: 29px 15px 0 15px;
+    padding: 29px 15px 17px 15px;
   }
 
   .form__input--username {
-    min-width: 320px;
+    width: 100%;
     margin-bottom: 18px;
   }
 
   .form__input--userphone {
-    min-width: 320px;
+    width: 100%;
   }
 
   .form__input--question {
-    margin-bottom: 27px;
+    margin-bottom: 32px;
   }
 
   .form__input--button {
     margin-right: 55px;
     padding-top: 16px;
     padding-bottom: 10px;
+  }
+
+  .form__input--agreement {
+    padding-left: 0;
   }
 
   .form__input--agreement input {
@@ -2273,10 +2361,6 @@ button,
     align-items: center;
   }
 
-  .footer__wrapper:not(:last-child) {
-    margin-right: 0;
-  }
-
   .footer__wrapper h3 {
     margin: 21px 0;
   }
@@ -2289,6 +2373,8 @@ button,
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+    margin-left: 0;
+    max-width: none;
   }
 
   .social {
@@ -2415,9 +2501,17 @@ button,
     transition: all 0.5s ease-out;
   }
 
+  .hero {
+    margin-top: -70px;
+  }
+
+  .hero__image-wrapper img {
+    height: 560px;
+  }
+
   .hero__description-wrapper {
-    top: 26.7%;
-    left: 7.5%;
+    padding: 25px;
+    padding-top: 149px;
   }
 
   .hero__description-wrapper h2 {
@@ -2490,6 +2584,7 @@ button,
 
   .advantages__item {
     min-width: 265px;
+    max-width: none;
     padding: 30px;
     padding-top: 26px;
     padding-bottom: 35px;
@@ -2609,6 +2704,12 @@ button,
     bottom: 17px;
   }
 
+  .catalog__image img {
+    height: 250px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
   .form {
     padding-bottom: 88px;
   }
@@ -2631,6 +2732,8 @@ button,
 
   .form__input-wrapper {
     grid-template-areas: "username" "userphone" "question" "button" "agreement";
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .form__input-wrapper > .modal__input--username {
@@ -2661,18 +2764,15 @@ button,
 
   .form__input textarea {
     padding-top: 25px;
-    padding-bottom: 24px;
+    padding-bottom: 46px;
   }
 
   .form__input--username {
     width: 100%;
-    min-width: 270px;
   }
 
   .form__input--userphone {
     width: 100%;
-    min-width: 270px;
-    max-width: none;
     margin-bottom: 18px;
   }
 

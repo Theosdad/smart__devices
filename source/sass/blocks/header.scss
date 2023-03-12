@@ -3,10 +3,12 @@
   min-height: 120px;
   background: linear-gradient(180deg, $black-pearl 85%, $black-pearl-transparent 100%);
   z-index: 10;
-  position: fixed;
+  position: sticky;
+  top: 0;
 
   @media (max-width: $tablet-width) {
     min-height: 100px;
+    position: relative;
   }
 
   @media (max-width: $mobile-width) {
@@ -17,11 +19,11 @@
 .header__container {
   margin: 0 auto;
   height: 100%;
-  max-width: calc($desktop-width-only - 700px);
+  max-width: calc($desktop-width-only - 600px);
+  padding: 0 50px;
   padding-top: 16px;
 
   @media (max-width: $tablet-width) {
-    padding: 0 50px;
     padding-top: 7px;
   }
 
